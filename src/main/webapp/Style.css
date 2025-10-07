@@ -1,0 +1,37 @@
+body{
+    background-color: #f5f5dc;
+    border-color: black;
+}
+h1{
+    font-size: xx-large;
+    text-align: center;
+}
+p{
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    text-emphasis-color: rgb(80, 27, 148);
+}
+.books{
+  height: 400px;  
+  width:auto;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  animation: alternate 2s infinite; 
+  box-shadow: #717171 0px 0px 10px;
+}
+img {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  float: left;
+  box-shadow: #000000 0px 0px 10px;
+}
+.slideshow-container {
+  width: 50%;
+  margin: 0 auto;
+  max-width: 600px;
+}
+

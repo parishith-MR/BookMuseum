@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+    <title>Museum Website Login...</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <style>
+    body{
+        background-color: #f5f5dc;
+        border-color: black;
+    }
+    h1{
+        font-size: 50px;
+        margin: 1px;
+        text-align: center;
+        padding: 1px;
+    }
+    p{
+        font-size: x-large;
+        font-family: 'Times New Roman', Times, serif;
+        text-emphasis-color: rgb(80, 27, 148);
+    }
+    .books{
+      color: #ffffff;
+      background: darkslategrey;
+      height: 400px;
+      width:auto;
+      border: 3px solid #dfc5c5;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 10px;
+      animation: alternate 2s infinite;
+      box-shadow: #717171 20px 20px 9px 0px;
+    }
+    img {
+      width: 200px;
+      height: auto;
+      margin: 10px;
+      border-radius: 10px;
+      float: left;
+      box-shadow: #000000 0px 0px 10px;
+    }
+    .slideshow-container {
+      width: 50%;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+   .forms {
+    size: auto;
+    background: #98b3ff;
+    border-radius: 50px;
+    height: auto;
+    width: 400px;
+	padding : 50px;
+	margin : 0 auto 30px auto;
+	transition : transform 0.9s ease;
+	margin-top : 250px;
+	}
+	.forms:hover{
+		background: #799EFF;
+		transform : translateY(-10px);
+	}
+    body {
+      background-color: #f5f5dc;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"], input[type="password"]{
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+      
+    }
+    .input{
+          background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .form-section {
+      margin-bottom: 10px;
+    }
+    .AJAXDisplay{
+	    font-family: 'Segoe UI', sans-serif;
+	    text-align: center;
+	    text-box: auto;
+	    color: crimson;
+	    border-block: azure;
+	    border-block-color: beige;
+	    text-shadow: 0 0 black;
+	    text-decoration: solid;
+	    border-block-end-color: black;
+    }
+    </style>
+<script>
+$(document).ready(function() {
+    $('#EmailValue').blur(function(event) {
+            var name = $('#EmailValue').val();
+            $.get('AJAXServlet', {
+            	EmailValue : name
+            }, function(responseText) {
+                    $('#NameToBeDisplay').text(responseText);
+            });
+    });
+});
+function Navigate(name){
+	const form = document.getElementById("Login");
+	form.action = name;
+	form.submit();
+}
+</script>
+<body>
+<form method="post" id="Login">
+	<div class="forms">
+		<h1> Login ...... </h1>
+		<label> Email :  </label><input type="email" placeholder="xyz@gamil.com" name="email" required id="EmailValue"><br/>
+		<label> Password : </label><input type="password" name="password" required/> <br/>
+		<input type="submit" value="Login" onClick="Navigate('LoginServlet')"/>
+	</div>
+</form>
+<h1 id="NameToBeDisplay" class="AJAXDisplay">
+	
+</h1>
+</body>
+</html>

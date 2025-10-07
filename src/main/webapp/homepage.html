@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="homepage.css">
+    <script src="homepagescript.js" defer ></script>
+    <title>Home page</title>
+    <style>
+    body{
+        background: linear-gradient(to right, #ffdd60, #ecaa58);
+        border-color: black;
+    }
+    </style>
+<script>
+  function navigateTo(action) {
+    const form = document.getElementById("inputs");
+    if (action === "Register") {
+      form.action = "RegisterServlet";
+    } else if (action === "Login") {
+      form.action = "Login.html";
+      windows.location.href="Login.html";
+      return ;
+    }
+    form.submit();
+  }
+</script>
+</head>
+<body>
+<div class="continer">
+<h1>Welcome to Book Museum Registration</h1>
+<form id="inputs" method="post" class="forms" action="http://localhost/Register.php">
+
+  <div class="form-section">
+    <label for="name">Enter Your Name:</label>
+    <input type="text" id="name" name="name" placeholder="parishith mohan">
+  </div>
+  <div class="form-section">
+    <label for="pwd">Enter Your password:</label>
+    <input type="password" id="pwd" name="pwd">
+  </div>
+  <div class="form-section">
+    <label for="dob">Select Your Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+  </div>
+  <div class="form-section">
+    <label for="email">Enter Your Email:</label>
+    <input type="email" id="email" name="email" placeholder="xyz@mail.com">
+  </div>
+  <div class="form-section">
+    <label>Select Your Book Preferences:</label><br>
+<input type="checkbox" name="preference[]" value="Fiction"> Fiction<br>
+<input type="checkbox" name="preference[]" value="Self-help"> Self-help<br>
+<input type="checkbox" name="preference[]" value="Education"> Education
+  </div>
+  <div style="text-align: center;">
+    <input type="submit" value="Register" formaction="http://localhost/Register.php">
+    <input type="submit" value="Login" onclick="navigateTo('Login')">
+  </div>
+</form>
+  <div id="result">
+  </div>
+  </div>
+</body>
+</html> 

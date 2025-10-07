@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="feedback.xsl"?>
+<!DOCTYPE feedbacks SYSTEM "feedback.dtd">
+<!-- <feedbacks xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="feedback.xsd"> -->
+<feedbacks>
+    <feedback>
+        <name>Parishit</name>
+        <email>Parishit.mohan@gamil.com</email>
+        <comments>Yeah the idea was good</comments>
+        <rating>4.9</rating>
+    </feedback>
+    <feedback>
+        <name>Mohan</name>
+        <email>mohan.parishith@gamil.com</email>
+        <comments>Great Product</comments>
+        <rating>4</rating>
+    </feedback>
+    <feedback>
+        <name>Rajan</name>
+        <email>Rajan@yahoo.com</email>
+        <comments>I Need more books </comments>
+        <rating>3.5</rating>
+    </feedback>
+</feedbacks>
